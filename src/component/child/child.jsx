@@ -1,13 +1,15 @@
-import {useContext} from 'react';
-import { Context } from '../../App';
 import SecondChild from '../SecondChild/SecondChild';
+import { useDispatch,useSelector } from 'react-redux';
+
 const Child=()=>{
 
-    const {counter,setCounter} = useContext(Context);
+    const dispach = useDispatch();
+    const counter= useSelector(state => state.counter)
 
     return(
         <div>
-        <button onClick={()=> setCounter(counter+1)}>increse</button>
+        <button onClick={()=>dispach({type:"changeIncrease"})} >increse</button>
+
         <SecondChild/>
         </div>
     )

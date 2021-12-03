@@ -1,9 +1,7 @@
-import { useContext }from 'react';
-import { Context } from '../../App';
+import { useSelector } from "react-redux";
 
 const SecondChild=()=>{
-
-    const {counter,setCounter}=useContext(Context);
+    const counter= useSelector(store => store?.counter)
 
     return(
         <div style={{backgroundColor:"red"}}>
